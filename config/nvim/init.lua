@@ -12,3 +12,5 @@ end
 require 'vim_options'
 require 'plugins'
 
+-- Replace tabline
+vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'

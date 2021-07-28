@@ -77,12 +77,7 @@ require('packer').startup(function()
     }
 
     use {
-        'akinsho/nvim-bufferline.lua',
-        config = {
-            function()
-                require('bufferline').setup{}
-            end
-        },
+        'alvarosevilla95/luatab.nvim',
         requires = {
             'kyazdani42/nvim-web-devicons',
             opt = true,
