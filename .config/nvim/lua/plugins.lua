@@ -47,7 +47,7 @@ require('packer').startup(function()
             end
         },
         requires = {
-            
+
         }
     }
 
@@ -65,21 +65,25 @@ require('packer').startup(function()
 
     use {
         'nvim-telescope/telescope.nvim',
-	    config = { 
+        config = { 
             function() 
                 require('config.telescope')
             end
-	    },
+        },
         requires = {
-		    'nvim-lua/popup.nvim',
-		    'nvim-lua/plenary.nvim',
-	    },
-
+            'nvim-lua/popup.nvim',
+            'nvim-lua/plenary.nvim',
+        },
     }
 
     use {
-        'romgrk/barbar.nvim',
-        requres = {
+        'akinsho/nvim-bufferline.lua',
+        config = {
+            function()
+                require('bufferline').setup{}
+            end
+        },
+        requires = {
             'kyazdani42/nvim-web-devicons',
             opt = true,
         },
@@ -105,12 +109,12 @@ end)
 
 -- lualine
 require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    theme = 'seoul256',
-    component_separators = {'', ''},
-    section_separators = {'', ''},
-    disabled_filetypes = {}
-  },
+    options = {
+        icons_enabled = true,
+        theme = 'seoul256',
+        component_separators = {'', ''},
+        section_separators = {'', ''},
+        disabled_filetypes = {}
+    },
 }
 
