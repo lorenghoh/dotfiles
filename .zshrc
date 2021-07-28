@@ -9,7 +9,7 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
  
 # Source Znap
-zstyle ':znap:*' git-dir ~/repos/zsh-snap
+zstyle ':znap:*' git-dir ~/sources/zsh-snap
 source ~/sources/zsh-snap/zsh-snap/znap.zsh
  
 znap source powerlevel10k
@@ -29,18 +29,20 @@ znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source supercrabtree/k
  
-znap source fzf-tab
+znap source Aloxaf/fzf-tab
 znap source marlonrichert/zsh-edit
 znap source jeffreytse/zsh-vi-mode
  
-# Prezto modules
-znap source prezto modules/{environment,history}
- 
-znap eval trapd00r/LS_COLORS 'gdircolors -b LS_COLORS'
+znap eval trapd00r/LS_COLORS "$( whence -a dircolors gdircolors ) -b LS_COLORS"
+
+znap source marlonrichert/zcolors
+znap eval   marlonrichert/zcolors "zcolors ${(q)LS_COLORS}"
+
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
  
 # Alias
 alias ls='ls --color=auto'
+alias k="k -ha"
 alias pyinit='eval "$(conda shell.bash hook)"'
 
 # ZSH settings
