@@ -93,10 +93,12 @@ require('packer').startup(function()
     }
 
     use {
-        'shaunsingh/seoul256.nvim',
+        'projekt0n/github-nvim-theme',
         config = {
             function()
-                require('seoul256').set()
+                require('github-theme').setup({
+                    themeStyle = 'dark',
+                })
             end
         }
     }
@@ -106,7 +108,7 @@ end)
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        theme = 'seoul256',
+        theme = 'github',
         component_separators = {'', ''},
         section_separators = {'', ''},
         disabled_filetypes = {}
