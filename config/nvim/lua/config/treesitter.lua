@@ -10,7 +10,7 @@ parser_configs.norg = {
 
 require('nvim-treesitter.configs').setup({
     -- nvim-treesitter/nvim-treesitter (self config)
-    ensure_installed = 'all',
+    ensure_installed = 'maintained',
     highlight = {
         enable = true,
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.

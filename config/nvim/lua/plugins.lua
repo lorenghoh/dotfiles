@@ -25,6 +25,7 @@ require('packer').startup(function()
         },
         requires = {
             'nvim-treesitter/playground',
+            'svermeulen/vimpeccable',
             opt = true
         },
         run = ':TSUpdate'
