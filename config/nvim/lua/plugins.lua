@@ -9,7 +9,8 @@ require('packer').startup(function()
             function()
                 require('config.norg')
             end
-        }
+        },
+        after = 'nvim-treesitter',
     }
 
     use {
@@ -25,7 +26,6 @@ require('packer').startup(function()
         },
         requires = {
             'nvim-treesitter/playground',
-            'svermeulen/vimpeccable',
             opt = true
         },
         run = ':TSUpdate'
