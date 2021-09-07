@@ -6,23 +6,24 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
  
 # Source Znap
-zstyle ':znap:*' git-dir $HOME/repos/zsh-snap
-source $HOME/Sources/zsh-snap/zsh-snap/znap.zsh
+source $HOME/Workspace/sources/zsh-snap/zsh-snap/znap.zsh
  
 znap source romkatv/powerlevel10k
  
 # configure $PATH
 path=(
+    /opt/homebrew/{bin,sbin}
     $HOME/.local/{bin,sbin}
-    $HOME/.local/{conda,neovim}/{bin,sbin}
+    $HOME/.local/{conda,neovim,texlive}/{bin,sbin}
     $path
 )
 
 export LD_LIBRARY_PATH=$HOME/.local/lib
 
+znap source Aloxaf/fzf-tab
 znap source supercrabtree/k
 znap source jeffreytse/zsh-vi-mode
 
@@ -39,7 +40,7 @@ znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 
 # Alias
-alias ls="ls --color=auto"
+alias ls="ls -FHG"
 alias k="k -ha"
 
 function pyinit() {
@@ -54,3 +55,4 @@ SAVEHIST=10240
 
 setopt INC_APPEND_HISTORY
 setopt HIST_SAVE_NO_DUPS
+
