@@ -17,7 +17,8 @@ znap source romkatv/powerlevel10k
 path=(
     /opt/homebrew/{bin,sbin}
     $HOME/.local/{bin,sbin}
-    $HOME/.local/{conda,neovim,texlive}/{bin,sbin}
+    $HOME/.local/{conda,neovim}/{bin,sbin}
+    $HOME/.local/tex/texbin
     $path
 )
 
