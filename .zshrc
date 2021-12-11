@@ -5,11 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Define source dir
+ZRC="$HOME/Workspace/sources"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
  
 # Source Znap
-source $HOME/Workspace/sources/zsh-snap/zsh-snap/znap.zsh
+source $ZRC/zsh-snap/zsh-snap/znap.zsh
  
 znap source romkatv/powerlevel10k
  
@@ -28,17 +31,19 @@ znap source Aloxaf/fzf-tab
 znap source supercrabtree/k
 znap source jeffreytse/zsh-vi-mode
 
-znap eval trapd00r/LS_COLORS "$( whence -a dircolors gdircolors ) -b LS_COLORS"
+# znap eval trapd00r/LS_COLORS "$( whence -a dircolors gdircolors ) -b LS_COLORS"
 
 znap source marlonrichert/zcolors
-znap eval   marlonrichert/zcolors "zcolors ${(q)LS_COLORS}"
+# znap eval   marlonrichert/zcolors "zcolors ${(q)LS_COLORS}"
 
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:ssh:*' hosts
  
 ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
+znap source marlonrichert/zsh-autocomplete
 
 # Alias
 alias ls="ls -FHG"
