@@ -79,6 +79,11 @@ require('packer').startup(function()
 
     use {
         'alvarosevilla95/luatab.nvim',
+        config = {
+            function()
+                require('luatab').setup({})
+            end
+        },
         requires = {
             'kyazdani42/nvim-web-devicons',
             opt = true,
