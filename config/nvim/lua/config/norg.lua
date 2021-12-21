@@ -1,16 +1,18 @@
 require('neorg').setup {
     load = {
         ["core.defaults"] = {},
+        ["core.gtd.base"] = {},
+        ["core.gtd.ui"] = {},
         ["core.norg.dirman"] = {
             config = {
                 workspaces = {
-                    my_workspace = "~/workspace"
+                    workspace = "~/Workspace"
                 }
             }
         },
         ["core.norg.completion"] = {
             config = {
-                engine = "nvim-compe"
+                engine = "nvim-cmp"
             }
         },
         ["core.norg.concealer"] = {},
