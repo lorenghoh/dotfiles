@@ -6,7 +6,7 @@ require('neorg').setup {
         ["core.norg.dirman"] = {
             config = {
                 workspaces = {
-                    workspace = "~/Workspace"
+                    workspace = "~/Workspace/agenda/"
                 }
             }
         },
