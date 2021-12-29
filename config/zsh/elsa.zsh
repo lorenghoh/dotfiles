@@ -8,19 +8,20 @@ path=(
 )
 
 export LD_LIBRARY_PATH=$HOME/.local/lib
+
 export TERM=xterm-256color
 
 # Alias and functions
-alias ls="ls --FHG"
+alias ls="ls --color=auto"
 alias k="k -ha"
 
 function pyinit() {
-    source $HOME/.local/conda/etc/profile.d/conda.sh 
+    source $HOME/.local/conda/etc/profile.d/conda.sh
     conda activate
 }
 
-module () {
-    eval '/usr/bin/modulecmd zsh $*'
+function module() {
+    eval $(/usr/bin/modulecmd zsh $@)
 }
 
 # Compiler settings
