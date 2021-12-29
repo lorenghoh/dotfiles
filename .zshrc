@@ -36,10 +36,16 @@ znap source jeffreytse/zsh-vi-mode
 znap source marlonrichert/zcolors
 # znap eval   marlonrichert/zcolors "zcolors ${(q)LS_COLORS}"
 
+zstyle ':znap:*:*' git-maintenance off
+
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*:ssh:*' hosts
- 
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+zstyle ':autocomplete:*' widget-style menu-complete
+zstyle ':autocomplete:*' insert-unambiguous yes
+zstyle ':autocomplete:*' min-input 2
+
 ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
