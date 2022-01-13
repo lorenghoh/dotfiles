@@ -23,8 +23,10 @@ function d() {
 	less --quit-if-one-screen -RX
 }
 
-# Replace ls with exa
-alias la="exa -Ga --group-directories-first"
+# Rust toolkits
+alias du="dust -r"
+
+alias la="exa -1la --group-directories-first"
 alias ls="exa -G --group-directories-first"
 
 function lt() {
