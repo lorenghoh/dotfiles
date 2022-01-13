@@ -5,6 +5,7 @@ path=(
     $HOME/.local/{bin,sbin}
     $HOME/.local/{conda,neovim}/{bin,sbin}
     $HOME/.local/tex/2020/bin/x86_64-linux
+    $HOME/.{rustup,cargo}/{bin,sbin}
     $path
 )
 

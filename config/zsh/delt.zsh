@@ -4,6 +4,7 @@ SRC=$HOME/sources
 path=(
     $HOME/.local/{bin,sbin}
     $HOME/.local/{conda,neovim}/{bin,sbin}
+    $HOME/.{rustup,cargo}/{bin,sbin}
     $path
 )
 
@@ -29,6 +30,23 @@ function lt() {
     else
         exa -1lFT -L=$1 --git
     fi
+}
+
+# PBS functions
+alias qs="qstat"
+alias qu="qstat -u loh"
+
+function qn() {
+    if (( $# == 0 ))
+    then
+        qstat -u loh
+    else
+        qstat -n $1.admin
+    fi
+}
+
+function qd() {
+    qdel $1.admin
 }
 
 # Compiler settings

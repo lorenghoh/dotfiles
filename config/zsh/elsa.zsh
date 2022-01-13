@@ -4,6 +4,7 @@ SRC=$HOME/sources/
 path=(
     $HOME/.local/{bin,sbin}
     $HOME/.local/{conda,neovim}/{bin,sbin}
+    $HOME/.{rustup,cargo}/{bin,sbin}
     $path
 )
 
@@ -22,6 +23,38 @@ function pyinit() {
 
 function module() {
     eval $(/usr/bin/modulecmd zsh $@)
+}
+
+# Rust toolkits
+alias du="dust -r"
+
+alias la="exa -1la --group-directories-first"
+alias ls="exa -G --group-directories-first"
+
+function lt() {
+    if (( $# == 0 ))
+    then
+        exa -1lFT -L=2 --git
+    else
+        exa -1lFT -L=$1 --git
+    fi
+}
+
+# PBS functions
+alias qs="qstat"
+alias qu="qstat -u loh"
+
+function qn() {
+    if (( $# == 0 ))
+    then
+        qstat -u loh
+    else
+        qstat -n $1.admin
+    fi
+}
+
+function qd() {
+    qdel $1.admin
 }
 
 # Compiler settings
