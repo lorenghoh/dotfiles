@@ -2,7 +2,7 @@ local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
 
 parser_configs.norg = {
     install_info = {
-        url = "https://github.com/vhyrro/tree-sitter-norg",
+
         files = { "src/parser.c", "src/scanner.cc" },
         branch = "main"
     },
@@ -26,7 +26,7 @@ parser_configs.norg_table = {
 
 require('nvim-treesitter.configs').setup({
     -- nvim-treesitter/nvim-treesitter (self config)
-    ensure_installed = 'maintained',
+    ensure_installed = { "bash", "bibtex", "c", "cmake", "cpp", "css", "cuda", "dockerfile", "fortran", "html", "http", "javascript", "json", "json5", "julia", "latex", "lua", "make", "markdown", "python", "r", "regex", "rust", "toml", "typescript", "vim", "vue", "yaml" },
     highlight = {
         enable = true,
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
