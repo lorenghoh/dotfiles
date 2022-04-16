@@ -15,6 +15,11 @@ require("packer").startup(function()
     }
 
     use {
+        "lervag/vimtex",
+        ft = "tex",
+    }
+
+    use {
         "itchyny/calendar.vim"
     }
 
