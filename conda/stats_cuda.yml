@@ -1,0 +1,17 @@
+name: stats
+
+channels:
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - dask
+  - numba
+  - pyarrow
+  - pyro-ppl
+  - scipy
+  - scikit-learn
+  - statsmodels
+  - gpytorch
+  - "cudatoolkit>=11"
+  - "pytorch=*=cuda*"

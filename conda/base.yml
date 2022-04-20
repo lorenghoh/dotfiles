@@ -1,0 +1,19 @@
+name: base
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - black
+  - cmake
+  - jupyter
+  - matplotlib
+  - pynvim
+  - numpy
+  - pandas
+  - pandoc
+  - "python>=3.9"
+  - seaborn
+  - tqdm
+
