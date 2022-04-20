@@ -16,4 +16,4 @@ dependencies:
   - zarr
   - gpytorch
   - "cudatoolkit>=11"
-  - "pytorch=*=cuda*"
+  - "pytorch=*=cpu*"
