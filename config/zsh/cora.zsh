@@ -17,7 +17,24 @@ function pyinit() {
     conda activate
 }
 
-# Rust toolkits
+## Homebrew
+alias bu="brew update && brew upgrade && brew cleanup"
+
+function bi() {
+    if (( $# == 0 ))
+    then
+        brew install $1
+    fi
+}
+
+function bd() {
+    if (( $# == 0 ))
+    then
+        brew uninstall $1
+    fi
+}
+
+## Rust toolkits
 alias du="dust -r"
 
 alias la="exa -1la --group-directories-first"
