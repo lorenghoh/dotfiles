@@ -33,7 +33,7 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 
 zstyle ':autocomplete:*' widget-style menu-complete
 zstyle ':autocomplete:*' insert-unambiguous yes
-zstyle ':autocomplete:*' min-input 2
+zstyle ':autocomplete:*' min-delay 0.5
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
 znap source zsh-users/zsh-syntax-highlighting
