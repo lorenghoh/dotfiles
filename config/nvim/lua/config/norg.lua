@@ -1,13 +1,18 @@
 require('neorg').setup {
     load = {
         ["core.defaults"] = {},
-        ["core.gtd.base"] = {},
         ["core.gtd.ui"] = {},
         ["core.norg.dirman"] = {
             config = {
                 workspaces = {
-                    workspace = "~/Workspace/agenda/"
-                }
+                    main = "~/Workspace/agenda/"
+                },
+                autodetect = true,
+            }
+        },
+        ["core.gtd.base"] = {
+            config = {
+                workspace = "main",
             }
         },
         ["core.norg.completion"] = {
@@ -15,7 +20,11 @@ require('neorg').setup {
                 engine = "nvim-cmp"
             }
         },
-        ["core.norg.concealer"] = {},
+        ["core.norg.concealer"] = {
+            config = {
+                markup_preset = "safe",
+            }
+        },
         ["core.keybinds"] = {
             config = {
                 default_keybinds = true,

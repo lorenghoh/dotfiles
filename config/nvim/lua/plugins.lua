@@ -124,7 +124,7 @@ require("packer").startup(function()
         config = {
             function()
                 require("github-theme").setup({
-                    theme_style = "dimmed",
+                    theme_style = "dark",
                 })
             end
         }
