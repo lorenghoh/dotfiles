@@ -16,7 +16,17 @@ require("packer").startup(function()
 
     use {
         "lervag/vimtex",
-        ft = "tex",
+        ft = { "tex", "markdown" },
+        requires = {
+            "hrsh7th/cmp-omni",
+            opt = true,
+        }
+    }
+
+    use {
+        "hrsh7th/cmp-omni",
+        ft = { "tex", "markdown" },
+        opt = true,
     }
 
     use {
@@ -32,7 +42,7 @@ require("packer").startup(function()
         },
         requires = {
             "nvim-treesitter/playground",
-            opt = true
+            opt = true,
         },
         run = ":TSUpdate"
     }
@@ -113,6 +123,31 @@ require("packer").startup(function()
                         component_separators = {"", ""},
                         section_separators = {"", ""},
                         disabled_filetypes = {}
+                    }
+                })
+            end
+        }
+    }
+
+    use {
+        "windwp/nvim-autopairs",
+        config = {
+            function()
+                require("nvim-autopairs").setup({})
+            end
+        }
+    }
+
+    use {
+        "kyazdani42/nvim-tree.lua",
+        requires = {
+            "kyazdani42/nvim-web-devicons",
+        },
+        config = {
+            function()
+                require("nvim-tree").setup({
+                    view = {
+                        relativenumber = true,
                     }
                 })
             end

@@ -10,6 +10,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 require 'vim_options'
+require 'mappings'
 require 'plugins'
 
 -- Replace tabline

@@ -3,6 +3,42 @@ local luasnip = require('luasnip')
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp = require('cmp')
+cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
+)
+
+-- Icons for display
+local kind_icons = {
+    Text = "",
+    Method = "",
+    Function = "",
+    Constructor = "",
+    Field = "",
+    Variable = "",
+    Class = "ﴯ",
+    Interface = "",
+    Module = "",
+    Property = "ﰠ",
+    Unit = "",
+    Value = "",
+    Enum = "",
+    Keyword = "",
+    Snippet = "",
+    Color = "",
+    File = "",
+    Reference = "",
+    Folder = "",
+    EnumMember = "",
+    Constant = "",
+    Struct = "",
+    Event = "",
+    Operator = "",
+    TypeParameter = ""
+}
+
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -42,26 +78,48 @@ cmp.setup {
     },
 
     sources = {
+        { name = 'omni' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'neorg' },
         { name = 'path' },
         { name = 'buffer' },
     },
+
+    formatting = {
+        format = function(entry, vim_item)
+            vim_item.kind = string.format(
+                '%s',
+                kind_icons[vim_item.kind]
+            )
+
+            vim_item.menu = ({
+                buffer = "[B]",
+                nvim_lsp = "[L]",
+                luasnip = "[S]",
+                omni = (
+                    vim.inspect(vim_item.menu):gsub('%"', "")),
+            })[entry.source.name]
+
+            return vim_item
+        end
+    }
 }
 
 cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = 'buffer' }
     }
 })
 
 cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
         { name = 'path' },
     }, {
-        { name = 'cmdline' }
-    })
+            { name = 'cmdline' }
+        })
 })
 
 local servers = {}
