@@ -31,5 +31,6 @@ opt.termguicolors = true            -- True color support
 opt.updatetime = 100                -- Delay before swap file is saved
 opt.wrap = true                     -- Enable line wrap
 opt.mouse = 'a'                     -- Enable mouse support
+opt.number = 'relativenumber'       -- Display relative numbers
 
 opt.clipboard = 'unnamedplus'
