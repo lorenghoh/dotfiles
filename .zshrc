@@ -16,8 +16,6 @@ source $HOME/.config/zsh/$ZHOST.zsh
 source $SRC/zsh-snap/zsh-snap/znap.zsh
  
 znap source romkatv/powerlevel10k
-
-znap source supercrabtree/k
 znap source jeffreytse/zsh-vi-mode
 
 znap eval trapd00r/LS_COLORS "$( whence -a dircolors gdircolors ) -b LS_COLORS"
