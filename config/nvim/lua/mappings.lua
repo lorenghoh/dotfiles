@@ -1,16 +1,22 @@
 -- Mappings
-local function map(mode, lhs, rhs, opts)
+local function map(mode, kc_in, kc_out, opts)
     local options = {
-        noremap = true
+        remap = true
     }
 
-    if opts then options = vim.tbl_extend('force', options, opts) end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+    if opts then
+        options = vim.tbl_extend('force', options, opts)
+    end
+
+    vim.keymap.set(mode, kc_in, kc_out, options)
 end
 
 
 -- Force quit
-map('n', '<Leader>z', ":qa!")
+map('n', '<Leader>z', ':qa!')
+
+-- Write
+map('n', '<Leader>w', ':w<CR>')
 
 -- Copy to clipboard in normal, visual, select and operator modes
 map('', '<leader>c', '"+y')
@@ -22,17 +28,35 @@ map('i', '<C-u>', '<C-g>u<C-u>')
 map('i', '<C-w>', '<C-g>u<C-w>')
 
 -- Replace j and k with gj and gk
-map('n', 'j', [[v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj']], { expr = true })
-map('n', 'k', [[v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk']], { expr = true })
+map('n', '<Down>', 'j', { silent = true })
+map('v', '<Down>', 'j', { silent = true })
+map('i', '<Down>', '<C-o>j', { silent = true} )
+map('n', '<Up>', 'k', { silent = true })
+map('v', '<Up>', 'k', { silent = true })
+map('i', '<Up>', '<C-o>k', { silent = true} )
 
--- Map Packer
+local function k_jump (kc)
+    if (vim.v.count > 0)
+    then
+        return kc
+    else
+        return 'g' .. kc
+    end
+end
+
+map('n', 'j', function() return k_jump('j') end, { expr = true, silent = true })
+map('v', 'j', function() return k_jump('j') end, { expr = true, silent = true })
+map('n', 'k', function() return k_jump('k') end, { expr = true, silent = true })
+map('v', 'k', function() return k_jump('k') end, { expr = true, silent = true })
+
+-- Packer
 map('n', '<Leader>u', ":PackerSync<CR>")
 
--- Map nvim-tree
+-- Nvim-tree
 map('n', '<Leader>t', ":NvimTreeFocus<CR>", { silent = true })
 
--- Map Telescope
-map('n', '<Leader>ff', ":Telescope find_files<CR>", { silent = true})
-map('n', '<Leader>fg', ":Telescope live_grep<CR>", { silent = true})
-map('n', '<Leader>fb', ":Telescope buffers<CR>", { silent = true})
-map('n', '<Leader>fh', ":Telescope help_tags<CR>", { silent = true})
+-- Telescope
+map('n', '<Leader>ff', ":Telescope find_files<CR>", { silent = true })
+map('n', '<Leader>fg', ":Telescope live_grep<CR>", { silent = true })
+map('n', '<Leader>fb', ":Telescope buffers<CR>", { silent = true })
+map('n', '<Leader>fh', ":Telescope help_tags<CR>", { silent = true })

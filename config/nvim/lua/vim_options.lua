@@ -30,6 +30,7 @@ opt.tabstop = indent                -- Number of spaces tabs count for
 opt.termguicolors = true            -- True color support
 opt.updatetime = 100                -- Delay before swap file is saved
 opt.wrap = true                     -- Enable line wrap
+opt.linebreak = true                -- Break by word
 opt.mouse = 'a'                     -- Enable mouse support
 opt.relativenumber = true           -- Display relative numbers
 
