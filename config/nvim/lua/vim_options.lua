@@ -33,5 +33,6 @@ opt.wrap = true                     -- Enable line wrap
 opt.linebreak = true                -- Break by word
 opt.mouse = 'a'                     -- Enable mouse support
 opt.relativenumber = true           -- Display relative numbers
+opt.foldenable = false              -- Disable folding
 
 opt.clipboard = 'unnamedplus'
