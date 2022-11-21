@@ -7,7 +7,7 @@ $all $fill $cmd_duration $time $line_break $character
 [character]
 success_symbol = "[➜](bold green) "
 error_symbol = "[✗](bold red) "
-vimcmd_symbol = "[?](bold green) "
+vimcmd_symbol = "[?](bold purple) "
 
 [username]
 show_always = true
