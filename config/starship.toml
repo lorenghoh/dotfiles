@@ -1,5 +1,5 @@
 format = """
-$all $fill $time $line_break $character
+$all $fill $cmd_duration $time $line_break $character
 """
 
 "$schema" = 'https://starship.rs/config-schema.json'
@@ -17,6 +17,10 @@ ssh_only = false
 
 [conda]
 ignore_base = false
+
+[cmd_duration]
+min_time = 500
+format = "[$duration](bold yellow)"
 
 [fill]
 symbol = " "
