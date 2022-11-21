@@ -35,4 +35,10 @@ opt.mouse = 'a'                     -- Enable mouse support
 opt.relativenumber = true           -- Display relative numbers
 opt.foldenable = false              -- Disable folding
 
+-- Replace space with dots
+opt.listchars = {
+    space = '·'
+}
+opt.list = true
+
 opt.clipboard = 'unnamedplus'
