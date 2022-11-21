@@ -25,5 +25,5 @@ symbol = " "
 disabled = false
 use_12hr = true
 format = "[$time]($style)"
-style = "bold bright-black"
+style = "bright-black"
 
