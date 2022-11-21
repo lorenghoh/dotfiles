@@ -14,7 +14,8 @@ dependencies:
   - numpy
   - pandas
   - pandoc
-  - "python>=3.9"
+  - "python>=3.11"
+  - python-lsp-server
   - seaborn
   - tqdm
 
