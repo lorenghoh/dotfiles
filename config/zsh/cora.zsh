@@ -4,7 +4,6 @@ SRC=$HOME/Workspace/sources/
 path=(
     /opt/homebrew/{bin,sbin}
     $HOME/.local/{bin,sbin}
-    $HOME/.local/conda/{bin,sbin}
     $HOME/.local/tex/texbin
     $path
 )
