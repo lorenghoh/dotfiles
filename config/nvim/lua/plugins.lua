@@ -96,6 +96,8 @@ require("packer").startup(function()
         requires = {
             "nvim-lua/popup.nvim",
             "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "BurntSushi/ripgrep"
         },
     }
 
@@ -107,7 +109,7 @@ require("packer").startup(function()
             end
         },
         requires = {
-            "kyazdani42/nvim-web-devicons",
+            "nvim-tree/nvim-web-devicons",
             opt = true,
         },
     }
@@ -142,7 +144,7 @@ require("packer").startup(function()
     use {
         "kyazdani42/nvim-tree.lua",
         requires = {
-            "kyazdani42/nvim-web-devicons",
+            "nvim-tree/nvim-web-devicons",
         },
         config = {
             function()
