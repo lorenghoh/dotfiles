@@ -1,18 +1,12 @@
 require('neorg').setup {
     load = {
         ["core.defaults"] = {},
-        ["core.gtd.ui"] = {},
         ["core.norg.dirman"] = {
             config = {
                 workspaces = {
                     main = "~/Workspace/agenda/"
                 },
                 autodetect = true,
-            }
-        },
-        ["core.gtd.base"] = {
-            config = {
-                workspace = "main",
             }
         },
         ["core.norg.completion"] = {

@@ -1,49 +1,31 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
+local lspkind = require('lspkind')
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-local cmp = require('cmp')
 cmp.event:on(
     'confirm_done',
     cmp_autopairs.on_confirm_done()
 )
-
--- Icons for display
-local kind_icons = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "ﴯ",
-    Interface = "",
-    Module = "",
-    Property = "ﰠ",
-    Unit = "",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "",
-    Event = "",
-    Operator = "",
-    TypeParameter = ""
-}
 
 cmp.setup {
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
         end,
+    },
+
+    view = {
+        entries = {
+            name = "custom",
+            selection_order = "near_cursor"
+        }
+    },
+
+    experimental = {
+        ghost_text = true
     },
 
     mapping = {
@@ -86,22 +68,35 @@ cmp.setup {
         { name = 'buffer' },
     },
 
+    window = {
+        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+
+        completion = {
+            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+            col_offset = -3,
+            side_padding = 0,
+        },
+    },
+
     formatting = {
+        fields = { "kind", "abbr", "menu" },
+
         format = function(entry, vim_item)
-            vim_item.kind = string.format(
-                '%s',
-                kind_icons[vim_item.kind]
+            local kind = require("lspkind").cmp_format({
+                mode = "symbol_text",
+                maxwidth = 50
+            })(entry, vim_item)
+            local strings = vim.split(
+                kind.kind,
+                "%s",
+                { triempty = true }
             )
 
-            vim_item.menu = ({
-                buffer = "[B]",
-                nvim_lsp = "[L]",
-                luasnip = "[S]",
-                omni = (
-                    vim.inspect(vim_item.menu):gsub('%"', "")),
-            })[entry.source.name]
+            kind.kind = "" .. strings[1] .. ""
+            kind.menu = "   (" .. strings[2] .. ")"
 
-            return vim_item
+            return kind
         end
     }
 }
