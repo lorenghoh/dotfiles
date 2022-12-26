@@ -148,11 +148,7 @@ require("packer").startup(function()
         },
         config = {
             function()
-                require("nvim-tree").setup({
-                    view = {
-                        relativenumber = true,
-                    }
-                })
+                require("config.nvim-tree")
             end
         }
     }

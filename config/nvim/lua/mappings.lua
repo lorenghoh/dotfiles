@@ -53,7 +53,7 @@ map('v', 'k', function() return k_jump('k') end, { expr = true, silent = true })
 map('n', '<Leader>u', ":PackerSync<CR>")
 
 -- Nvim-tree
-map('n', '<Leader>t', ":NvimTreeFocus<CR>", { silent = true })
+map('n', '<Leader>t', ":NvimTreeToggle<CR>", { silent = true })
 
 -- Telescope
 map('n', '<Leader>ff', ":Telescope find_files<CR>", { silent = true })
