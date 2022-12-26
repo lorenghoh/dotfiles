@@ -4,6 +4,9 @@ local previewers = require 'telescope.previewers'
 
 require('telescope').setup {
     defaults = {
+        layout_strategy = 'vertical',
+        layout_config = { height = 0.8 },
+
         mappings = {
             i = {
                 ["<c-j>"] = actions.move_selection_next,
@@ -13,5 +16,5 @@ require('telescope').setup {
         file_previewer = previewers.vim_buffer_cat.new,
         grep_previewer = previewers.vim_buffer_vimgrep.new,
         qflist_previewer = previewers.vim_buffer_qflist.new
-    }
+    },
 }
