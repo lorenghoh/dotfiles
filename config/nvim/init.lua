@@ -5,7 +5,11 @@ local fmt = string.format
 
 local function map(mode, lhs, rhs, opts)
     local options = {noremap = true}
-    if opts then options = vim.tbl_extend('force', options, opts) end
+
+    if opts then
+        options = vim.tbl_extend('force', options, opts)
+    end
+
     api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
