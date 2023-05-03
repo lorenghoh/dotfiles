@@ -3,13 +3,15 @@ SRC=$HOME/sources/
 # configure $PATH
 path=(
     $HOME/.local/{bin,sbin}
-    $HOME/.local/opt/neovim/{bin,sbin}
+    $HOME/.local/opt/{conda,neovim}/{bin,sbin}
+    $HOME/.local/opt/tex/bin/x86_64-linux
     $HOME/.{rustup,cargo}/{bin,sbin}
     $path
 )
 
 export LD_LIBRARY_PATH=$HOME/.local/lib
 
+export TERMINFO="/usr/share/terminfo"
 export TERM=xterm-256color
 
 # Alias and functions
@@ -49,12 +51,12 @@ function qn() {
     then
         qstat -u loh
     else
-        qstat -n $1.admin
+        qstat -n $1.elsa00
     fi
 }
 
 function qd() {
-    qdel $1.admin
+    qdel $1.elsa00
 }
 
 # Compiler settings
