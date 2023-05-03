@@ -18,9 +18,9 @@ function pyinit() {
 
 # Webster's dictionary using sdcv
 function d() {
-	sdcv -n --utf8-output --color "$@" 2>&1 | \
-	fold --width=$(tput cols) | \
-	less --quit-if-one-screen -RX
+    sdcv -n --utf8-output --color "$@" 2>&1 | \
+    fold --width=$(tput cols) | \
+    less --quit-if-one-screen -RX
 }
 
 # Rust toolkits
