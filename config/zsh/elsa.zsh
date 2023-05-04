@@ -19,8 +19,8 @@ alias ls="ls --color=auto"
 alias k="k -ha"
 
 function pyinit() {
-    source $HOME/.local/opt/conda/etc/profile.d/conda.sh
-    conda activate
+    . ~/.config/zsh/mamba.sh
+    mamba activate
 }
 
 function module() {
