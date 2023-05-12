@@ -1,5 +1,5 @@
-export CONDA_EXE="/home/loh/.local/opt/conda/bin/conda"
-export CONDA_PYTHON_EXE="/home/loh/.local/opt/conda/bin/python"
+export CONDA_EXE="$CONDA_DIR/bin/conda"
+export CONDA_PYTHON_EXE="$CONDA_DIR/bin/python"
 
 __conda_exe() (
     "$CONDA_EXE" $_CE_M $_CE_CONDA "$@"

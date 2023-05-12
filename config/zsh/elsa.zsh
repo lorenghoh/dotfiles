@@ -10,6 +10,7 @@ path=(
 )
 
 export LD_LIBRARY_PATH=$HOME/.local/lib
+export CONDA_DIR=$HOME/.local/opt/conda
 
 export TERMINFO="/usr/share/terminfo"
 export TERM=xterm-256color

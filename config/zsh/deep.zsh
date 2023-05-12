@@ -8,12 +8,13 @@ path=(
 )
 
 export LD_LIBRARY_PATH=$HOME/.local/lib
+export CONDA_DIR=$HOME/.local/conda
 
 ## Alias and functions
 # Conda initialization
 function pyinit() {
-    source $HOME/.local/conda/etc/profile.d/conda.sh 
-    conda activate
+    . $HOME/.config/zsh/mamba.sh
+    mamba activate
 }
 
 # Webster's dictionary using sdcv
