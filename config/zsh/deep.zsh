@@ -10,6 +10,8 @@ path=(
 export LD_LIBRARY_PATH=$HOME/.local/lib
 export CONDA_DIR=$HOME/.local/conda
 
+export WEZTERM_CONFIG_DIR=$HOME/.config/wezterm
+
 ## Alias and functions
 # Conda initialization
 function pyinit() {
