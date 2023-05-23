@@ -9,7 +9,6 @@ end
 
 -- Local config
 config.font = wezterm.font "FiraCode Nerd Font"
-config.font_size = 11
 
 config.color_scheme = 'github_dimmed'
 
