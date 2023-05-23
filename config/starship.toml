@@ -10,7 +10,7 @@ error_symbol = "[✗](bold red) "
 vimcmd_symbol = "[?](bold purple) "
 
 [username]
-show_always = true
+disabled = true
 
 [hostname]
 ssh_only = false
