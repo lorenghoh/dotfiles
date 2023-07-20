@@ -3,7 +3,6 @@ SRC=$HOME/Sources/
 # configure $PATH
 path=(
     $HOME/.local/{bin,sbin}
-    $HOME/.local/conda/{bin,sbin}
     $path
 )
 
@@ -11,6 +10,8 @@ export LD_LIBRARY_PATH=$HOME/.local/lib
 export CONDA_DIR=$HOME/.local/conda
 
 export WEZTERM_CONFIG_DIR=$HOME/.config/wezterm
+export LIBVA_DRIVER_NAME=nvidia
+export npm_config_prefix="$HOME/.local"
 
 ## Alias and functions
 # Conda initialization
