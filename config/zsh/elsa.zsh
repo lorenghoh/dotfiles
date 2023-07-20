@@ -2,8 +2,8 @@ SRC=$HOME/sources/
 
 # configure $PATH
 path=(
-    $HOME/.local/{bin,sbin}
-    $HOME/.local/opt/{conda,neovim}/{bin,sbin}
+    $HOME/.local/{app,bin,sbin}
+    $HOME/.local/opt/conda/{bin,sbin}
     $HOME/.local/opt/tex/bin/x86_64-linux
     $HOME/.{rustup,cargo}/{bin,sbin}
     $path
