@@ -11,9 +11,9 @@ end
 config.font = wezterm.font("FiraCode Nerd Font")
 
 config.color_scheme = "github_dimmed"
-
 config.window_padding = {
 	bottom = 0,
 }
+config.check_for_updates = false
 
 return config
