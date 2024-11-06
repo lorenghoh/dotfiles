@@ -1,7 +1,7 @@
-set -gx CONDA_EXE "/home/loh/.local/opt/mamba/bin/conda"
-set _CONDA_ROOT "/home/loh/.local/opt/mamba"
-set _CONDA_EXE "/home/loh/.local/opt/mamba/bin/conda"
-set -gx CONDA_PYTHON_EXE "/home/loh/.local/opt/mamba/bin/python"
+set -gx CONDA_EXE "$HOME/.local/opt/mamba/bin/conda"
+set _CONDA_ROOT "$HOME/.local/opt/mamba"
+set _CONDA_EXE "$HOME/.local/opt/mamba/bin/conda"
+set -gx CONDA_PYTHON_EXE "$HOME/.local/opt/mamba/bin/python"
 
 # Copyright (C) 2012 Anaconda, Inc
 # SPDX-License-Identifier: BSD-3-Clause
