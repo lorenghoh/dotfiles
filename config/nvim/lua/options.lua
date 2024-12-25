@@ -6,7 +6,7 @@ opt.cursorlineopt = "both"
 opt.linebreak = true
 
 opt.wrap = true
-opt.textwidth = 80
+opt.textwidth = 0
 opt.autoindent = true
 opt.tabstop = 8 -- keep this default
 opt.softtabstop = 4

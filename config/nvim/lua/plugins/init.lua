@@ -43,7 +43,8 @@ return {
                 "css",
                 "fortran",
                 "python",
-                "markdown"
+                "markdown",
+                "markdown_inline"
             },
         },
     },
@@ -61,7 +62,7 @@ return {
 
     {
         "folke/trouble.nvim",
-        opts = {}, -- for default options, refer to the configuration section for custom setup.
+        opts = {},
         cmd = "Trouble",
         keys = {
             {
@@ -98,15 +99,28 @@ return {
     },
 
     {
+        "folke/todo-comments.nvim",
+        lazy = false,
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        },
+        opts = {
+            highlight = {
+                comments_only = false
+            }
+        }
+    },
+
+    {
         -- Add additional sources to default cmp configuration
         "hrsh7th/nvim-cmp",
         dependencies = {
             "f3fora/cmp-spell",
         },
-            opts = function(_, opts)
-                opts.sources[1].trigger_characters = { "-" }
-                table.insert(opts.sources, 1, { name = "spell" })
-            end
+        opts = function(_, opts)
+            opts.sources[1].trigger_characters = { "-" }
+            table.insert(opts.sources, 1, { name = "spell" })
+        end
     },
 
 }
