@@ -18,4 +18,6 @@ dependencies:
   - python-lsp-server
   - seaborn
   - tqdm
-
+  - ruff
+  - fortls
+  - findent

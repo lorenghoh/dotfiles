@@ -1,0 +1,21 @@
+name: stats
+
+channels:
+  - pytorch-nightly
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - dask
+  - numba
+  - pyarrow
+  - pyro-ppl
+  - scipy
+  - scikit-learn
+  - statsmodels
+  - xarray
+  - zarr
+  - gpytorch
+  - pytorch-nightly::pytorch
+  - torchvision
+  - torchaudio
