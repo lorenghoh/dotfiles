@@ -4,4 +4,8 @@ end
 
 fish_add_path -g ~/.local/bin ~/.cargo/bin
 
+# Aliases
+alias nv='nvim'
+alias pn='pnpm'
+
 starship init fish | source
