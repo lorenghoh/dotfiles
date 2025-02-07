@@ -1,0 +1,11 @@
+# Font configuration
+font-family = "FiraCode Nerd Font Mono"
+font-size = 14
+
+# Window
+window-width = 90
+window-height = 48
+
+mouse-scroll-multiplier = 0.5
+
+theme = Github-Dark-Dimmed
