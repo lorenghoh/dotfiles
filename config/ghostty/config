@@ -1,11 +1,14 @@
 # Font configuration
 font-family = "FiraCode Nerd Font Mono"
-font-size = 14
+font-family = "Apple SD Gothic Neo"
+font-size = 15
 
 # Window
 window-width = 90
 window-height = 48
 
+window-padding-x = 8
+
 mouse-scroll-multiplier = 0.5
 
-theme = Github-Dark-Dimmed
+theme = Github Dark Dimmed

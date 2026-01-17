@@ -1,0 +1,13 @@
+return {
+    {
+        -- Add additional sources to default cmp configuration
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "f3fora/cmp-spell",
+        },
+        opts = function(_, opts)
+            opts.sources[1].trigger_characters = { "-" }
+            table.insert(opts.sources, 1, { name = "spell" })
+        end
+    },
+}

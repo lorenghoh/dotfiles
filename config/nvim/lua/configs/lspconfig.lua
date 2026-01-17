@@ -54,3 +54,14 @@ lspconfig.texlab.setup {
         }
     }
 }
+
+-- Typst
+lspconfig.tinymist.setup {
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    settings = {
+        formatterMode = "typstyle",
+        exportPdf = "onSave",
+        symanticTokens = "enable",
+    }
+}
