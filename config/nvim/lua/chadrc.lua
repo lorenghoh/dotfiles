@@ -5,14 +5,13 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.base46 = {
-}
+M.base46 = {}
 
 M.ui = {
-    cmp = {
-        icons_left = true,
-        style = "flat_light"
-    },
+	cmp = {
+		icons_left = true,
+		style = "flat_light",
+	},
 }
 
 return M

@@ -5,9 +5,9 @@ $all $fill $cmd_duration $time $line_break $character
 "$schema" = 'https://starship.rs/config-schema.json'
 
 [character]
-success_symbol = "[➜](bold green) "
-error_symbol = "[✗](bold red) "
-vimcmd_symbol = "[?](bold purple) "
+success_symbol = "[>](bold green)[>](bold yellow)[>](bold red) "
+error_symbol = "[x  ](bold red) "
+vimcmd_symbol = "[<](bold red)[<](bold yellow)[<](bold green) "
 
 [username]
 disabled = true
